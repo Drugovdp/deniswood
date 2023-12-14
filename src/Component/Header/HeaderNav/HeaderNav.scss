@@ -1,0 +1,93 @@
+@import "../../../styles/variables.scss";
+
+.nav {
+    @include max-width-block;
+    margin-top: 40px;
+
+    &Wrapper {
+        display: flex;
+        padding: 10px 0 10px;
+        justify-content: space-between;
+        align-items: center;
+
+        &Logo {
+            min-width: 84px;
+            height: 48px;
+            position: relative;
+            & img {
+                width: 100%;
+                height: 100%;
+            }
+            & .decor {
+                position: absolute;
+                width: 400px;
+                height: 400px;
+                top: -200px;
+                left: -180%;
+                opacity: 0.3;
+            
+                & img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &Nav {
+            flex-basis: 60%;
+            display: flex;
+            gap: 5%;
+            justify-content: space-between;
+
+            & li {
+                & a {
+                    color: $color-text-grey;
+                    @include font400;
+                }
+            }
+        }
+        .mobileMenu {
+            display: none;
+            flex-direction: column;
+            width: 48px;
+            height: 48px;
+            background-color: $background-color;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            transition: gap 0.3s ease;
+            cursor: pointer;
+
+            &:hover {
+                gap: 5px;
+            }
+
+            & span {
+                width: 34px;
+                height: 3px;
+                background-color: #ffff;
+                border: none;
+                transform: rotate(0deg);
+                line-height: 5px;
+            }
+
+            &:hover span {
+                width: 30px;
+                height: 2px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .navWrapperNav {
+        display: none;
+    }
+    .nav {
+        &Wrapper {
+             & .mobileMenu {
+                position: sticky;
+                display: flex;
+            }
+        }
+    }
+}

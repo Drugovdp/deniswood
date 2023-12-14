@@ -1,0 +1,157 @@
+@import "../../styles/variables.scss";
+
+.sectionCatalog {
+    margin-top: clamp(62px, 6vh, 240px);
+    margin-bottom: $mt60;
+    &Wrapper {
+        @include max-width-block;
+
+        & .filterBlockChange {
+            display: none;
+            appearance: none;
+            width: 30%;
+            min-width: 220px;
+            margin: $mt60 0 $mt60 0;
+            padding: 1%;
+            color: $color-text-white;
+            font-size: $font-16-20;
+            @include font400;
+            background-color: transparent;
+            border-radius: 30px;
+            border: 3px solid #1f9fba;
+            outline: none;
+
+            & option {
+                color: $color-text-white;
+                background-color: #090e10;
+                outline: none;
+            }
+        }
+
+        & .catalogTitle {
+            font-size: $font-46-62;
+            @include font700;
+
+            & h1 {
+                color: $color-text-white;
+
+                & span {
+                    color: $color-text-blue;
+                }
+            }
+        }
+        & .filterBlock {
+            width: 70%;
+            margin: $mt60 / 2 auto $mt60 auto;
+            text-transform: uppercase;
+            color: $color-text-white;
+            font-size: $font-16-20;
+            @include font400;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & > * {
+                cursor: pointer;
+            }
+        }
+        & .prodact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            row-gap: 60px;
+
+            &Item {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0px 2px 8px 5px rgba(255, 255, 255, 0.25) inset;
+
+                & .foto {
+                    width: 95%;
+                    padding: 4px;
+                    & img {
+                        width: 100%;
+                    }
+                }
+                & .name,
+                & .prise,
+                & .size,
+                & .thickness {
+                    height: 20px;
+                    padding: 5px;
+                }
+                & .name,
+                & .prise {
+                    color: $color-text-blue;
+                    font-size: $font-18-24;
+                    @include font500;
+                }
+                & .prise {
+                    color: $color-text-white;
+                    &::after {
+                        content: " \20BD";
+                    }
+                }
+                & .size,
+                & .thickness {
+                    color: $color-text-grey;
+                    font-size: $font-16-20;
+                    @include font400;
+                }
+            }
+        }
+    }
+}
+
+.btnCard {
+    width: 60%;
+    height: 50px;
+    border-radius: 10px;
+    border: 3px solid $color-text-blue;
+    background-color: #14212a;
+    margin-top: $mt60 / 3;
+    margin-bottom: $mt60 / 3;
+    font-size: $font-14-18;
+    color: $color-text-grey;
+    @include font400;
+    transition: background-color 0.5s ease-in-out;
+
+    &:hover {
+        background-color: #000000;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .sectionCatalog {
+        margin-top: $mt60 * 2;
+        &Wrapper {
+            & .prodact {
+                justify-content: center;
+                &Item {
+                    width: 48%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sectionCatalog {
+        &Wrapper {
+            & .filterBlockChange {
+                display: block;
+            }
+            & .filterBlock {
+                display: none;
+            }
+            & .prodact {
+                &Item {
+                    width: 98%;
+                }
+            }
+        }
+    }
+}
