@@ -1,0 +1,268 @@
+@import "../../../styles/variables.scss";
+
+.headerMain {
+    @include max-width-block;
+    margin-top: clamp(100px, 16vw, 200px);
+
+    &Content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 60px;
+
+        & .title {
+            font-size: $font-46-62;
+            @include font700;
+
+            & h1:first-child {
+                color: $color-text-white;
+            }
+            & h1:last-child {
+                position: relative;
+                margin-top: 10px;
+                color: $color-text-blue;
+                transform: translateX(110px);
+                z-index: 3;
+            }
+        }
+
+        & .btnBlock {
+            display: flex;
+            width: 60%;
+            justify-content: start;
+            align-content: center;
+            column-gap: 30px;
+
+            & .itemBtn {
+                width: 48%;
+                display: flex;
+                flex-direction: column;
+                row-gap: 30px;
+            }
+
+            & .itemBtnVideo {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                gap: 20px;
+                cursor: pointer;
+
+                &Btn {
+                    width: 51px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background: $background-color;
+                    position: relative;
+                    z-index: 3;
+
+                    .animBc {
+                        position: absolute;
+                        width: 50px;
+                        height: 50px;
+                        top: 0;
+                        left: 0;
+                        border-radius: 50%;
+                        background: $background-color;
+                        z-index: -1;
+                        animation: pulse 4s infinite linear;
+
+                        @keyframes pulse {
+                            0% {
+                                opacity: 1;
+                                transform: scale(1, 1);
+                                animation-timing-function: linear;
+                            }
+                            50% {
+                                opacity: 0;
+                                transform: scale(1.8, 1.8);
+                                animation-timing-function: linear;
+                            }
+                            100% {
+                                opacity: 0;
+                                transform: scale(1.7, 1.7);
+                            }
+                        }
+                    }
+
+                    & img {
+                        width: 100%;
+                    }
+                }
+
+                &Header {
+                    & p {
+                        color: $color-text-grey;
+                        @include font400;
+                    }
+                    & span {
+                        color: $color-text-white;
+                        @include font500;
+                        text-transform: uppercase;
+                        line-height: 1.8;
+                    }
+                }
+            }
+        }
+
+        & .discriptionBlock {
+            display: flex;
+            width: 60%;
+            justify-content: space-between;
+            align-content: center;
+
+            & .itemDiscription {
+                width: 42%;
+                & .line {
+                    width: 100%;
+                    height: 1px;
+                    background: $color-text-white;
+                }
+                & .text {
+                    margin-top: 10px;
+                    color: $color-text-grey;
+                    @include font400;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+    & .baner {
+        position: absolute;
+        width: clamp(300px, 37vw, 520px);
+        top: 350px;
+        right: 0;
+        z-index: 2;
+
+        & img {
+            width: 100%;
+        }
+
+        & .decor {
+            position: absolute;
+            width: 90%;
+            top: 54%;
+            right: 27%;
+            opacity: 0.3;
+            z-index: 0;
+
+            & img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.btnTable,
+.btnCatalog {
+    color: #ffffff;
+    width: clamp(210px, 25vw, 300px);
+    height: clamp(52px, 5vw, 60px);
+    font-size: clamp(18px, 2vw, 24px);
+    line-height: 1.55;
+    border-radius: 30px;
+    @include font700;
+    border: 3px solid $background-color;
+}
+
+.btnTable {
+    background-color: #1f9fba;
+}
+.btnCatalog {
+    background: none;
+}
+
+@media screen and (max-width: 800px) {
+    .headerMain {
+        position: relative;
+        &Content {
+            & .btnBlock {
+                width: 100%;
+                justify-content: center;
+                column-gap: 0;
+            }
+            & .discriptionBlock {
+                width: 100%;
+                justify-content: center;
+                column-gap: 5%;
+
+                & .itemDiscription {
+                    & .text {
+                        color: $color-text-white;
+                    }
+                }
+            }
+        }
+        & .baner {
+            position: absolute;
+            width: 400px;
+            top: unset;
+    
+            & .decor {
+                width: 400px;
+                right: 10%;
+                top: 10%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .headerMain {
+        &Content {
+            & .title {
+                font-size: $font-24-42;
+            }
+        }
+        & .baner {
+            position: absolute;
+            width: 400px;
+            top: unset;
+    
+            & .decor {
+                right: 10%;
+                top: 43%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .headerMain {
+        &Content {
+            & .title {
+                font-size: $font-24-42;
+                & h1:last-child {
+                    transform: translateX(45px);
+                }
+            }
+            & .btnBlock {
+                width: 100%;
+                flex-direction: column;
+
+                & .itemBtn {
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                & .itemBtnVideo {
+                    margin-top: $mt60 / 2;
+                }
+            }
+            & .discriptionBlock {
+                flex-direction: column;
+                align-items: center;
+                & .itemDiscription {
+                    width: 90%;
+                    margin-top: $mt60 / 3;
+                }
+            }
+        }
+        .baner {
+            width: 100%;
+            margin-top: $mt60;
+
+            & .decor {
+                right: 22%;
+            }
+        }
+    }
+}

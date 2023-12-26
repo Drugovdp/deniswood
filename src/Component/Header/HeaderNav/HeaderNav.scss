@@ -1,0 +1,131 @@
+@import "../../../styles/variables.scss";
+
+.nav {
+    @include max-width-block;
+    margin-top: 40px;
+    position: relative;
+
+    &Wrapper {
+        height: 48px;
+        display: flex;
+        padding: 10px 0 10px;
+        justify-content: space-between;
+        align-items: center;
+
+        &Logo {
+            width: 160px;
+            position: relative;
+            & img {
+                width: 100%;
+            }
+            & .decor {
+                position: absolute;
+                width: 400px;
+                height: 400px;
+                top: -150px;
+                left: -130px;
+                opacity: 0.3;
+
+                & img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &Nav {
+            height: 100%;
+            flex-basis: 60%;
+            display: flex;
+            gap: 5%;
+            justify-content: space-between;
+            align-items: center;
+
+            & li {
+                color: $color-text-grey;
+                @include font400;
+                height: 100%;
+                line-height: 3;
+                & a {
+                    color: $color-text-grey;
+                }
+                &:last-child {
+                    width: 90px;
+                    height: 48px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    cursor: pointer;
+                }
+            }
+        }
+        .mobileMenu {
+            display: none;
+            flex-direction: column;
+            width: 48px;
+            height: 48px;
+            background-color: $background-color;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            transition: gap 0.3s ease;
+            cursor: pointer;
+
+            &:hover {
+                gap: 5px;
+            }
+
+            & span {
+                width: 34px;
+                height: 3px;
+                background-color: #ffff;
+                border: none;
+                transform: rotate(0deg);
+                line-height: 5px;
+            }
+
+            &:hover span {
+                width: 30px;
+                height: 2px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .navWrapperNav {
+        display: none;
+    }
+    .nav {
+        &Wrapper {
+            & .mobileMenu {
+                position: sticky;
+                display: flex;
+            }
+            &Logo {
+                width: clamp(130px, 17vw, 160px);
+                & img {
+                    width: 100%;
+                }
+                & .decor {
+                    width: 326px;
+                    height: 325px;
+                    top: -50%;
+                    left: -50%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .nav {
+        &Wrapper {
+            &Logo {
+                & .decor {
+                    top: -70%;
+                    left: -70%;
+                }
+            }
+        }
+    }
+}

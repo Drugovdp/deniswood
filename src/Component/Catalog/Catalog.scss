@@ -1,0 +1,230 @@
+@import "../../styles/variables.scss";
+
+.sectionCatalog {
+    margin-top: clamp(62px, 6vh, 240px);
+    margin-bottom: $mt60;
+    &Wrapper {
+        @include max-width-block;
+
+        & .filterBlockChange {
+            display: none;
+            width: 30%;
+            min-width: 220px;
+            margin: $mt60 0 $mt60 0;
+
+            h3 {
+                color: $color-text-grey;
+                font-size: $font-16-20;
+                @include font400;
+                opacity: 0.5;
+                margin-bottom: $mt60 / 3;
+                text-transform: uppercase;
+            }
+
+            & select {
+                width: 100%;
+                padding: 1%;
+                color: $color-text-white;
+                font-size: $font-16-20;
+                @include font400;
+                background-color: transparent;
+                border: none;
+                border-bottom: 3px solid #1f9fba;
+                outline: none;
+
+                & option {
+                    color: $color-text-white;
+                    background-color: #090e10;
+                    outline: none;
+                }
+            }
+        }
+
+        & .catalogTitle {
+            font-size: $font-46-62;
+            @include font700;
+
+            & h1 {
+                color: $color-text-white;
+
+                & span {
+                    color: $color-text-blue;
+                }
+            }
+        }
+        & .filterBlock {
+            width: 80%;
+            margin: $mt60 / 2 auto $mt60 / 2 auto;
+            text-transform: uppercase;
+            color: $color-text-white;
+            font-size: $font-16-20;
+            @include font400;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+
+            & .btnFilter {
+                min-width: auto;
+                
+                & input[type=radio] {
+                    display: none;
+                }
+                & label {
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        width: 18px;
+                        height: 18px;
+                        position: absolute;
+                        top: 50%;
+                        left: -26px;
+                        transform: translateY(-50%);
+                        border-radius: 50%;
+                        border: 1px solid $color-text-blue;
+                        background-color: $color-text-white;
+                        cursor: pointer;
+                    }
+                }
+                & input[type=radio]:checked + label::before {
+                    background-image: url('../../images/circle.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 16px 16px;
+                }
+            }
+        }
+        & .prodact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+
+            &Item {
+                width: 31%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0px 2px 8px 5px rgba(255, 255, 255, 0.25) inset;
+
+                & .foto {
+                    width: 95%;
+                    padding: 4px;
+                    & img {
+                        width: 100%;
+                    }
+                    .swiper-button-prev:after,
+                    .swiper-button-next:after {
+                        font-size: 28px;
+                        font-weight: 600;
+                        color: $color-text-blue;
+                    }
+                }
+                & .name,
+                & .prise,
+                & .size,
+                & .thickness {
+                    height: 20px;
+                    padding: 5px;
+                }
+                & .name,
+                & .prise {
+                    color: $color-text-blue;
+                    font-size: $font-18-24;
+                    @include font500;
+                }
+                & .prise {
+                    color: $color-text-white;
+                    &::after {
+                        content: " \20BD";
+                    }
+                }
+                & .size,
+                & .thickness {
+                    color: $color-text-grey;
+                    font-size: $font-16-20;
+                    @include font400;
+                }
+            }
+        }
+    }
+}
+
+.btnCard {
+    width: 60%;
+    height: 50px;
+    border-radius: 10px;
+    border: 3px solid $color-text-blue;
+    background-color: #14212a;
+    margin-top: $mt60 / 3;
+    margin-bottom: $mt60 / 3;
+    font-size: $font-14-18;
+    color: $color-text-grey;
+    @include font400;
+    transition: background-color 0.5s ease-in-out;
+
+    &:hover {
+        background-color: #000000;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .sectionCatalog {
+        & .prodact {
+            gap: 25px;
+            &Item {
+                width: 48%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .sectionCatalog {
+        margin-top: $mt60 * 2;
+        &Wrapper {
+            & .filterBlock {
+                .btnFilter {
+                    min-width: 100px;
+                    margin-top: 15px;
+                }
+            }
+            & .prodact {
+                &Item {
+                    width: 44%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sectionCatalog {
+        &Wrapper {
+            & .filterBlock {
+                .btnFilter {
+                    min-width: 120px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .sectionCatalog {
+        &Wrapper {
+            & .filterBlock {
+                .btnFilter {
+                    min-width: 170px;
+                }
+            }
+            & .prodact {
+                &Item {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

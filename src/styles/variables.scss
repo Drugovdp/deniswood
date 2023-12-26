@@ -1,0 +1,40 @@
+@mixin max-width-block {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px 0 10px;
+}
+
+@mixin font400 {
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 400;
+}
+@mixin font500 {
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 500;
+}
+@mixin font600 {
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 600;
+}
+@mixin font700 {
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 700;
+}
+
+$font-46-62: clamp(46px, 5.2vw, 62px);
+$font-24-42: clamp(24px, 5.2vw, 42px);
+$font-18-24: clamp(18px, 2vw, 24px);
+$font-16-20: clamp(16px, 2vw, 20px);
+$font-14-18: clamp(14px, 2vw, 18px);
+
+$mt60: 60px;
+
+$color-text-white: #ffff;
+$color-text-grey: #a1a1a1;
+$color-text-blue: #1f9fba;
+
+$background-color: #1f9fba;
