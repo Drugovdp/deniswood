@@ -2,12 +2,12 @@
 
 .headerMain {
     @include max-width-block;
+    margin-top: clamp(100px, 16vw, 200px);
 
     &Content {
         display: flex;
         flex-direction: column;
         row-gap: 60px;
-        margin-top: clamp(100px, 16vw, 200px);
 
         & .title {
             font-size: $font-46-62;
@@ -125,29 +125,28 @@
             }
         }
     }
-}
-
-.baner {
-    position: absolute;
-    width: clamp(300px, 37vw, 520px);
-    top: 350px;
-    right: 0;
-    z-index: 2;
-
-    & img {
-        width: 100%;
-    }
-
-    & .decor {
+    & .baner {
         position: absolute;
-        width: 100%;
-        top: 44%;
-        right: 34%;
-        opacity: 0.3;
-        z-index: 0;
+        width: clamp(300px, 37vw, 520px);
+        top: 350px;
+        right: 0;
+        z-index: 2;
 
         & img {
             width: 100%;
+        }
+
+        & .decor {
+            position: absolute;
+            width: 90%;
+            top: 54%;
+            right: 27%;
+            opacity: 0.3;
+            z-index: 0;
+
+            & img {
+                width: 100%;
+            }
         }
     }
 }
@@ -172,38 +171,36 @@
 }
 
 @media screen and (max-width: 800px) {
-    .headerMainContent {
+    .headerMain {
         position: relative;
-        z-index: 2;
+        &Content {
+            & .btnBlock {
+                width: 100%;
+                justify-content: center;
+                column-gap: 0;
+            }
+            & .discriptionBlock {
+                width: 100%;
+                justify-content: center;
+                column-gap: 5%;
 
-        & .btnBlock {
-            width: 100%;
-            justify-content: center;
-            column-gap: 0;
-        }
-        & .discriptionBlock {
-            width: 100%;
-            justify-content: center;
-            column-gap: 5%;
-
-            & .itemDiscription {
-                & .text {
-                    color: $color-text-white;
+                & .itemDiscription {
+                    & .text {
+                        color: $color-text-white;
+                    }
                 }
             }
         }
-    }
-
-    .baner {
-        width: 400px;
-        top: unset;
-        bottom: 0;
-        z-index: 0;
-
-        & .decor {
-            width: 500px;
-            right: 10%;
-            top: 10%;
+        & .baner {
+            position: absolute;
+            width: 400px;
+            top: unset;
+    
+            & .decor {
+                width: 400px;
+                right: 10%;
+                top: 10%;
+            }
         }
     }
 }
@@ -213,6 +210,16 @@
         &Content {
             & .title {
                 font-size: $font-24-42;
+            }
+        }
+        & .baner {
+            position: absolute;
+            width: 400px;
+            top: unset;
+    
+            & .decor {
+                right: 10%;
+                top: 43%;
             }
         }
     }
@@ -230,7 +237,7 @@
             & .btnBlock {
                 width: 100%;
                 flex-direction: column;
-    
+
                 & .itemBtn {
                     width: 100%;
                     flex-direction: column;
@@ -250,8 +257,12 @@
             }
         }
         .baner {
-            width: 300px;
-            bottom: -44px;
+            width: 100%;
+            margin-top: $mt60;
+
+            & .decor {
+                right: 22%;
+            }
         }
     }
 }

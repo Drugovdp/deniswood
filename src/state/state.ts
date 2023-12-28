@@ -13,13 +13,16 @@ import round2 from '../images/97069290.jpg'
 import fashen1 from '../images/12417125.jpg'
 import fashen2 from '../images/75537949.jpg'
 
-type TypeCatalog = {
+export type TypeUseTable = 'all' | 'dinner' | 'magazine' | 'workers' | 'other'
+
+export type TypeCatalog = {
     id: string
     name: string
     imgFoto: Array<string>
     prise: number
     size: string
     thickness: string
+    use: TypeUseTable
 }
 
 export const catalog: TypeCatalog[] = [
@@ -29,7 +32,8 @@ export const catalog: TypeCatalog[] = [
         imgFoto: [charisma1, charisma2],
         prise: 300000,
         size: '2200x1000mm',
-        thickness: '50mm'
+        thickness: '50mm',
+        use: 'dinner'
     },
     {
         id: v1(),
@@ -37,7 +41,8 @@ export const catalog: TypeCatalog[] = [
         imgFoto: [platon1, platon2],
         prise: 195000,
         size: '2200x900mm',
-        thickness: '50mm'
+        thickness: '50mm',
+        use: 'other'
     },
     {
         id: v1(),
@@ -45,7 +50,8 @@ export const catalog: TypeCatalog[] = [
         imgFoto: [standart1, standart2],
         prise: 100000,
         size: '1300x800mm',
-        thickness: '50mm'
+        thickness: '50mm',
+        use: 'magazine'
     },
     {
         id: v1(),
@@ -53,7 +59,8 @@ export const catalog: TypeCatalog[] = [
         imgFoto: [grand1, grand2],
         prise: 395000,
         size: '2900х1200mm',
-        thickness: '50mm'
+        thickness: '50mm',
+        use: 'workers'
     },
     {
         id: v1(),
@@ -61,7 +68,8 @@ export const catalog: TypeCatalog[] = [
         imgFoto: [round1, round2],
         prise: 248000,
         size: '2000x2000mm',
-        thickness: '50mm'
+        thickness: '50mm',
+        use: 'workers'
     },
     {
         id: v1(),
@@ -69,6 +77,7 @@ export const catalog: TypeCatalog[] = [
         imgFoto: [fashen1, fashen2],
         prise: 310000,
         size: '2000x1000mm',
-        thickness: '50mm'
+        thickness: '50mm',
+        use: 'dinner'
     },
 ] 

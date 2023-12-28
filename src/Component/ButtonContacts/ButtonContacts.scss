@@ -1,0 +1,17 @@
+@import "../../styles/variables.scss";
+
+.btnContacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90px;
+
+    &WhatsApp, &Tel {
+        width: 32px;
+        height: 32px;
+
+        & img {
+            width: 100%;
+        }
+    }
+}
