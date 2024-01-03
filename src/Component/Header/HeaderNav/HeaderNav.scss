@@ -2,11 +2,9 @@
 
 .nav {
     @include max-width-block;
-    margin-top: 40px;
-    position: relative;
 
     &Wrapper {
-        height: 48px;
+        height: 68px;
         display: flex;
         padding: 10px 0 10px;
         justify-content: space-between;
@@ -102,7 +100,7 @@
                 display: flex;
             }
             &Logo {
-                width: clamp(130px, 17vw, 160px);
+                width: clamp(110px, 17vw, 160px);
                 & img {
                     width: 100%;
                 }
@@ -120,6 +118,7 @@
 @media screen and (max-width: 468px) {
     .nav {
         &Wrapper {
+            margin-top: 0;
             &Logo {
                 & .decor {
                     top: -70%;

@@ -8,10 +8,10 @@ import telephone from '../../images/telephone.svg'
 export const ButtonContacts = () => {
     return (
         <div className='btnContacts'>
-            <a className='btnContactsWhatsApp' href="https://wa.me/79184156738?text=Здравствуйте! Меня интересует...">
+            <a className='btnContactsWhatsApp' href="https://wa.me/79502050084?text=Здравствуйте! Меня интересует...">
                 <img src={whatsApp} alt="whatsApp" />
             </a>
-            <a className="btnContactsTel" href="tel:+79184156738" target="_blank">
+            <a className="btnContactsTel" href="tel:+79502050084" target="_blank">
                 <img src={telephone} alt="" />
             </a>
         </div>

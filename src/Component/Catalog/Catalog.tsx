@@ -30,6 +30,11 @@ export const Catalog = () => {
     setFilterCatalog(filterValue)
   }
 
+  const optionValue = (e: ChangeEvent<HTMLSelectElement>) => {
+    const filterValue = e.currentTarget.value
+    setFilterCatalog(filterValue)
+  }
+
   const cardsProdact = cards.map(el => {
     return (
       <div key={el.id} className="prodactItem">
@@ -63,10 +68,10 @@ export const Catalog = () => {
 
       const unsetStyleBlock = (parentBlock: HTMLDivElement) => {
         parentBlock.style.position = ''
-        parentBlock.style.top = 'unset'
-        parentBlock.style.backgroundColor = 'unset'
-        parentBlock.style.padding = 'unset'
-        parentBlock.style.zIndex = 'unset'
+        parentBlock.style.top = ''
+        parentBlock.style.backgroundColor = ''
+        parentBlock.style.padding = ''
+        parentBlock.style.zIndex = ''
       }
 
       if (parentBlock && childBlock) {
@@ -94,10 +99,19 @@ export const Catalog = () => {
 
   return (
     <section>
-      <div className='sectionCatalogWrapper'>
-        <div ref={parentBlockRef}>
+      <div className='catalogWrapper'>
+        <div className='catalogWrapperHeader' ref={parentBlockRef}>
           <div className="catalogTitle">
             <h1>КАТАЛОГ <span>ИЗДЕЛИЙ</span></h1>
+          </div>
+          <div className='option'>
+            <select name="optionFilter" onChange={optionValue}>
+              <option value={'all'}>ВСЕ</option>
+              <option value={'dinner'}>ОБЕДЕННЫЕ</option>
+              <option value={'magazine'}>ЖУРНАЛЬНЫЕ</option>
+              <option value={'workers'}>РАБОЧИЕ</option>
+              <option value={'other'}>ДРУГОЕ</option>
+            </select>
           </div>
           <div className="filterBlock">
             <div className="btnFilter">

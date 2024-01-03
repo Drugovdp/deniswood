@@ -18,10 +18,9 @@
             }
             & h1:last-child {
                 position: relative;
-                margin-top: 10px;
+                margin: 10px 0 0 50px;
                 color: $color-text-blue;
-                transform: translateX(110px);
-                z-index: 3;
+                z-index: 5;
             }
         }
 
@@ -128,9 +127,8 @@
     & .baner {
         position: absolute;
         width: clamp(300px, 37vw, 520px);
-        top: 350px;
+        top: 250px;
         right: 0;
-        z-index: 2;
 
         & img {
             width: 100%;
@@ -142,7 +140,7 @@
             top: 54%;
             right: 27%;
             opacity: 0.3;
-            z-index: 0;
+            z-index: 2;
 
             & img {
                 width: 100%;
@@ -231,7 +229,7 @@
             & .title {
                 font-size: $font-24-42;
                 & h1:last-child {
-                    transform: translateX(45px);
+                    margin: 10px 0 0 25px;
                 }
             }
             & .btnBlock {
@@ -257,7 +255,7 @@
             }
         }
         .baner {
-            width: 100%;
+            width: 88%;
             margin-top: $mt60;
 
             & .decor {

@@ -21,13 +21,20 @@ header {
 @media screen and (max-width: 800px) {
     header {
         height: 1135px;
-        position: relative;
+        overflow: visible;
     } 
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     header {
         height: 850px;
+        overflow: visible;
+    } 
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        height: 1270px;
     } 
 }
 
