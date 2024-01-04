@@ -1,15 +1,21 @@
-@import "../styleMixin/styleMixin.scss";
+@import "../../styles/variables.scss";
 
-.inputFeedBack, .inputForm {
+input {
+    appearance: none;
     width: 100%;
-    height: 100%;
-    font-size: clamp(14px, 1.4vw, 16px);
+    margin-top: $mt60 / 6;
+    height: 50px;
+    border-radius: 10px;
+    border: 3px solid $color-text-blue;
+    padding-left: 10px;
+    color: $color-text-blue;
+    font-size: $font-14-18;
     @include font500;
-    color: $primary-color-text-input;
     outline: none;
-    border: none;
 
     &::placeholder {
-        opacity: 0.5;
+        color: $color-text-grey;
+        font-size: $font-14-18;
+        @include font400;
     }
 }

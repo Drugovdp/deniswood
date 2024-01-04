@@ -31,25 +31,15 @@
                     font-size: $font-16-20;
                     @include font400;
                     margin-top: $mt60 / 2;
+                    position: relative;
 
-                    & input {
-                        appearance: none;
-                        width: 100%;
-                        margin-top: $mt60 / 6;
-                        height: 50px;
-                        border-radius: 10px;
-                        border: 3px solid $color-text-blue;
-                        padding-left: 10px;
-                        color: $color-text-blue;
-                        font-size: $font-14-18;
-                        @include font500;
-                        outline: none;
-
-                        &::placeholder {
-                            color: $color-text-grey;
-                            font-size: $font-14-18;
-                            @include font400;
-                        }
+                    & span {
+                        position: absolute;
+                        bottom: -15px;
+                        left: 0;
+                        color: red;
+                        font-size: 12px;
+                        @include font400;
                     }
                 }
                 .btnForm {
@@ -71,6 +61,18 @@
                     }
                 }
             }
+        }
+    }
+    .formText {
+        text-align: center;
+        color: $color-text-white;
+        font-size: 12px;
+        @include font400;
+        margin-top: $mt60 / 4;
+        padding: 5px;
+
+        & a {
+            color: $color-text-blue;
         }
     }
 }
