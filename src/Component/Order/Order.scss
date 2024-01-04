@@ -3,7 +3,7 @@
 .sectionOrder {
     &Wrapper {
         @include max-width-block;
-        margin: $mt60 auto 0 auto;
+        margin-top: $mt60;
 
         & .orderTitle {
             width: 100%;

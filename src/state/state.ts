@@ -1,83 +1,132 @@
-import { v1 } from 'uuid'
+import { v1 } from "uuid";
 
-import charisma1 from '../images/84362446.jpg'
-import charisma2 from '../images/14824930.jpg'
-import platon1 from '../images/43491821.jpg'
-import platon2 from '../images/52164297.jpg'
-import standart1 from '../images/71064608.jpg'
-import standart2 from '../images/95915266.jpg'
-import grand1 from '../images/13047235.jpg'
-import grand2 from '../images/39965545.jpg'
-import round1 from '../images/62780161.jpg'
-import round2 from '../images/97069290.jpg'
-import fashen1 from '../images/12417125.jpg'
-import fashen2 from '../images/75537949.jpg'
+import charisma1 from "../images/84362446.jpg";
+import charisma2 from "../images/14824930.jpg";
+import platon1 from "../images/43491821.jpg";
+import platon2 from "../images/52164297.jpg";
+import standart1 from "../images/71064608.jpg";
+import standart2 from "../images/95915266.jpg";
+import grand1 from "../images/13047235.jpg";
+import grand2 from "../images/39965545.jpg";
+import round1 from "../images/62780161.jpg";
+import round2 from "../images/97069290.jpg";
+import fashen1 from "../images/12417125.jpg";
+import fashen2 from "../images/75537949.jpg";
 
-export type TypeUseTable = 'all' | 'dinner' | 'magazine' | 'workers' | 'other'
+export type TypeUseTable = "all" | "dinner" | "magazine" | "workers" | "other";
 
 export type TypeCatalog = {
-    id: string
-    name: string
-    imgFoto: Array<string>
-    prise: number
-    size: string
-    thickness: string
-    use: TypeUseTable
-}
+  id: string;
+  name: string;
+  imgFoto: Array<string>;
+  prise: number;
+  size: string;
+  thickness: string;
+  use: TypeUseTable;
+};
 
 export const catalog: TypeCatalog[] = [
-    {
-        id: v1(),
-        name: 'Харизма',
-        imgFoto: [charisma1, charisma2],
-        prise: 300000,
-        size: '2200x1000mm',
-        thickness: '50mm',
-        use: 'dinner'
-    },
-    {
-        id: v1(),
-        name: 'Платон',
-        imgFoto: [platon1, platon2],
-        prise: 195000,
-        size: '2200x900mm',
-        thickness: '50mm',
-        use: 'other'
-    },
-    {
-        id: v1(),
-        name: 'Стандарт',
-        imgFoto: [standart1, standart2],
-        prise: 100000,
-        size: '1300x800mm',
-        thickness: '50mm',
-        use: 'magazine'
-    },
-    {
-        id: v1(),
-        name: 'Гранд',
-        imgFoto: [grand1, grand2],
-        prise: 395000,
-        size: '2900х1200mm',
-        thickness: '50mm',
-        use: 'workers'
-    },
-    {
-        id: v1(),
-        name: 'Кругляш',
-        imgFoto: [round1, round2],
-        prise: 248000,
-        size: '2000x2000mm',
-        thickness: '50mm',
-        use: 'workers'
-    },
-    {
-        id: v1(),
-        name: 'Фэшен',
-        imgFoto: [fashen1, fashen2],
-        prise: 310000,
-        size: '2000x1000mm',
-        thickness: '50mm',
-        use: 'dinner'
-    },
-] 
+  {
+    id: v1(),
+    name: "Харизма",
+    imgFoto: [charisma1, charisma2],
+    prise: 300000,
+    size: "2200x1000mm",
+    thickness: "50mm",
+    use: "dinner",
+  },
+  {
+    id: v1(),
+    name: "Платон",
+    imgFoto: [platon1, platon2],
+    prise: 195000,
+    size: "2200x900mm",
+    thickness: "50mm",
+    use: "other",
+  },
+  {
+    id: v1(),
+    name: "Стандарт",
+    imgFoto: [standart1, standart2],
+    prise: 100000,
+    size: "1300x800mm",
+    thickness: "50mm",
+    use: "magazine",
+  },
+  {
+    id: v1(),
+    name: "Гранд",
+    imgFoto: [grand1, grand2],
+    prise: 395000,
+    size: "2900х1200mm",
+    thickness: "50mm",
+    use: "workers",
+  },
+  {
+    id: v1(),
+    name: "Кругляш",
+    imgFoto: [round1, round2],
+    prise: 248000,
+    size: "2000x2000mm",
+    thickness: "50mm",
+    use: "workers",
+  },
+  {
+    id: v1(),
+    name: "Фэшен",
+    imgFoto: [fashen1, fashen2],
+    prise: 310000,
+    size: "2000x1000mm",
+    thickness: "50mm",
+    use: "dinner",
+  },
+];
+
+export type TypeAccordionData = {
+  id: string;
+  title: string;
+  content: string;
+};
+
+export const accordionData: TypeAccordionData[] = [
+  {
+    id: v1(),
+    title: "Насколько бережной должна быть эксплуатация изделий?",
+    content: `Это зависит от модели стола. Есть практичные изделия с минимальным количеством смолы или с заливкой мало эксплуатируемых областей поверхности. В таком случае, глянцевая поверхность заливки используется редко, сохраняя свой блеск надолго. К каждому изделию мы прилагаем инструкцию по эксплуатации, следование которой поможет значительно сократить количество реставраций изделия в течении всего срока службы`,
+  },
+  {
+    id: v1(),
+    title: "Ваши изделия экологичны?",
+    content: `Существует миф о том, что эпоксидная смола вредна для здоровья. Это почти неправда. Вредна она только в процессе заливки. Полимеризация (застывание) смолы сопровождается испарением вредных веществ (фенолы, формальдегиды). Однако, при эксплуатации эпоксидная смола безвредна для здоровья`,
+  },
+  {
+    id: v1(),
+    title: "Что делать, когда фактура дерева потускнеет, а смола поцарапается?",
+    content: `Стол из массива и смолы может служить десятки лет. При этом, его легко поддерживать в новом состоянии. Процесс реставрации осуществляется на штатном месте стола и включает в себя три этапа: шлифовка мелким зерном, нанесение масла, полировка смолы. Мы предлагаем данную услугу только нашим покупателям. Реставрируем быстро (1 кв.м/час), без пыли и мусора`,
+  },
+  {
+    id: v1(),
+    title: "Как сделать заказ?",
+    content: `В этом Вам помогут наши дизайнеры. Заказ стола - это творческий процесс, который начинается с выбора модели стола. Далее, дизайнеры подбирают массив. Ассортимент дерева огромен, так как на нашем складе в наличии 150 кубических метров слэбов из разных частей света. Далее, мы визуализируем будущий стол (выкладываем слэбы по тз; обрамляем по форме; делаем дополнительные фото, видео; визуализируем заливку в графическом редакторе). Завершающий этап - составление договора, в котором мы фиксируем все дизайнерские задумки`,
+  },
+  {
+    id: v1(),
+    title: "У вас есть доставка?",
+    content: `Мы бесплатно доставляем свои изделия по Екатеринбургу. Так же, отправляем в регионы и страны СНГ через транспортные компании (ПЭК, Деловые линии и т.д.) сборным грузом в твердой упаковке. Доставка до терминала бесплатна, далее по тарифом транспортных компаний`,
+  },
+  {
+    id: v1(),
+    title: "Какие сроки изготовления?",
+    content: `Стандартный срок изготовления - 25 рабочих дней. При необходимости сможем быстрее. Однако, это обсуждается индивидуально`,
+  },
+  {
+    id: v1(),
+    title: "Что влияет на стоимость стола?",
+    content: `Самый главный критерий ценообразования - размер стола и объем смолы. Так же, на цену влияет сложность дизайна (фигурные края, художественная заливка и т.д)`,
+  },
+  {
+    id: v1(),
+    title: "Есть ли гарантия?",
+    content: `В своей работе мы используем материалы премиального качества и проверенные технологии изготовления. Благодаря этому, мы уверены в качестве своих изделий и предлагаем гарантию 2 года по договору`,
+  },
+];

@@ -1,0 +1,34 @@
+@import "../../styles/variables.scss";
+
+.sectionAnswers {
+    // height: 100vh;
+    &Wrapper {
+        @include max-width-block;
+        margin-top: $mt60;
+
+        & .answersTitle {
+            width: 100%;
+
+            & h1 {
+                color: white;
+                font-size: clamp(46px, 5.2vw, 62px);
+                @include font700;
+                text-transform: uppercase;
+
+                & span {
+                    color: #1f9fba;
+                }
+            }
+        }
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            margin-top: $mt60 / 2;
+            gap: 10px;
+
+            &Item {
+                overflow: hidden;
+            }
+        }
+    }
+}

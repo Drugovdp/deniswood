@@ -1,0 +1,57 @@
+@import "../../../styles/variables.scss";
+
+.accordionItem {
+    overflow: hidden;
+
+    &Title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        div:first-child {
+            color: $color-text-white;
+            font-size: $font-18-24;
+            @include font600;
+            line-height: 1.3;
+        }
+        div:last-child {
+            flex: 0 0 38px;
+            font-size: 38px;
+            font-weight: 600;
+            color: $color-text-blue;
+            text-align: center;
+        }
+
+        &:hover div:last-child {
+            border-radius: 50%;
+            background-color: $color-text-blue;
+            color: $color-text-list;
+        }
+    }
+
+    &Content {
+        width: 95%;
+        color: $color-text-white;
+        font-size: $font-12-16;
+        @include font500;
+        font-style: italic;
+        line-height: 1.55;
+        margin-top: 10px;
+        transition: max-height 0.2s ease-in;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .accordionItem {
+        &Title {
+            div:first-child {
+                font-size: 16px;
+            }
+            div:last-child {
+                flex: 0 0 28px;
+                font-size: 28px;
+            }
+        }
+    }
+}
