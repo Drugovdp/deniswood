@@ -1,7 +1,6 @@
 @import "../../styles/variables.scss";
 
 .sectionAnswers {
-    // height: 100vh;
     &Wrapper {
         @include max-width-block;
         margin-top: $mt60;

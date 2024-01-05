@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
+import { Input } from '../../Input/Input'
+import { Button } from '../../Button/Button'
+
 import './Form.scss'
 
-import { Button } from '../Button/Button'
-import { Input } from '../Input/Input'
+type TypeForm = {
+    api: string
+}
 
-export const Form = () => {
+export const Form: React.FC<TypeForm> = ({api}) => {
 
     const [valueName, setValueName] = useState('')
     const [valueEmail, setValueEmail] = useState('')
@@ -42,7 +46,6 @@ export const Form = () => {
     const onClickHandler = () => {
 
         let countError = 0
-        const API_PATH = 'http://testemail/index.php'
 
         if (valueName) {
             formData.name = valueName
@@ -77,7 +80,7 @@ export const Form = () => {
 
             axios({
                 method: 'post',
-                url: `${API_PATH}`,
+                url: `${api}`,
                 headers: { 'content-type': 'application/json' },
                 data: JSON.stringify(formData)
             })
@@ -96,48 +99,40 @@ export const Form = () => {
     }
 
     return (
-        <section className='sectionForm'>
-            <div className="sectionFormWrapper">
-                <div className="formTitle"> 
-                    <h1>ПОЛУЧИ <span>ПЕРСОНАЛЬНУЮ</span> КОНСУЛЬТАЦИЮ</h1>
-                    <div className="form">
-                        <label htmlFor="name">
-                            <p>Ваше Имя</p>
-                            <Input
-                                value={valueName}
-                                classNames={'inputFeedBack'}
-                                placeholder={'Введите имя'}
-                                onChangeValueHandler={(value) => onChangeNameHandler(value)}
-                                onFocusNameHandler={(e) => onFocusNameHandler(e)}
-                            />
-                            <span></span>
-                        </label>
-                        <label htmlFor="tel">
-                            <p>Укажите номер телефона</p>
-                            <Input
-                                value={valueTel}
-                                classNames={'inputFeedBack'}
-                                placeholder={'89999876543'}
-                                onChangeValueHandler={(value) => onChangeTelHandler(value)}
-                                onFocusNameHandler={onFocusNameHandler}
-                            />
-                            <span></span>
-                        </label>
-                        <label htmlFor="email">
-                            <p>Укажите почту</p>
-                            <Input
-                                value={valueEmail}
-                                classNames={'inputFeedBack'}
-                                placeholder={'mail@mail.ru'}
-                                onChangeValueHandler={(value) => onChangeEmailHandler(value)}
-                            />
-                            <span></span>
-                        </label>
-                        <Button className='btnForm' callBack={onClickHandler}>Отправить</Button>
-                    </div>
-                </div>
-            </div>
-            <div className='formText'>Нажимая на кнопку, Вы принимаете <a href='#'>Положение</a> и <a href='#'>Согласие</a> на обработку персональных данных</div>
-        </section>
+        <div className="form">
+            <label htmlFor="name">
+                <p>Ваше Имя</p>
+                <Input
+                    value={valueName}
+                    classNames={'inputFeedBack'}
+                    placeholder={'Введите имя'}
+                    onChangeValueHandler={(value) => onChangeNameHandler(value)}
+                    onFocusNameHandler={(e) => onFocusNameHandler(e)}
+                />
+                <span></span>
+            </label>
+            <label htmlFor="tel">
+                <p>Укажите номер телефона</p>
+                <Input
+                    value={valueTel}
+                    classNames={'inputFeedBack'}
+                    placeholder={'89999876543'}
+                    onChangeValueHandler={(value) => onChangeTelHandler(value)}
+                    onFocusNameHandler={onFocusNameHandler}
+                />
+                <span></span>
+            </label>
+            <label htmlFor="email">
+                <p>Укажите почту</p>
+                <Input
+                    value={valueEmail}
+                    classNames={'inputFeedBack'}
+                    placeholder={'mail@mail.ru'}
+                    onChangeValueHandler={(value) => onChangeEmailHandler(value)}
+                />
+                <span></span>
+            </label>
+            <Button className='btnForm' callBack={onClickHandler}>Отправить</Button>
+        </div>
     )
 }

@@ -1,0 +1,46 @@
+@import "../../styles/variables.scss";
+
+.sectionForm {
+    .sectionFormWrapper {
+        @include max-width-block;
+        margin: $mt60 auto 0 auto;
+
+        & .formTitle {
+            width: 100%;
+            & h1 {
+                color: white;
+                font-size: clamp(46px, 5.2vw, 62px);
+                @include font700;
+                text-transform: uppercase;
+
+                & span {
+                    color: #1f9fba;
+                }
+            }
+        }
+    }
+    .formText {
+        text-align: center;
+        color: $color-text-white;
+        font-size: 12px;
+        @include font400;
+        margin-top: $mt60 / 4;
+        padding: 5px;
+
+        & a {
+            color: $color-text-blue;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sectionForm {
+        .sectionFormWrapper {
+            & .formTitle {
+                & h1 {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
