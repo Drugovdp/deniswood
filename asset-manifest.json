@@ -1,33 +1,29 @@
 {
   "files": {
-    "main.css": "/deniswood/static/css/main.71511fe4.css",
-    "main.js": "/deniswood/static/js/main.83293653.js",
+    "main.css": "/deniswood/static/css/main.d2c9e09c.css",
+    "main.js": "/deniswood/static/js/main.09791607.js",
     "static/js/787.de2061fa.chunk.js": "/deniswood/static/js/787.de2061fa.chunk.js",
-    "static/media/39965545.jpg": "/deniswood/static/media/39965545.5b8162bb8c448d6c4698.jpg",
-    "static/media/84362446.jpg": "/deniswood/static/media/84362446.20aa24f8c65721483dec.jpg",
-    "static/media/75537949.jpg": "/deniswood/static/media/75537949.40025c16ffe765dabb9c.jpg",
-    "static/media/13047235.jpg": "/deniswood/static/media/13047235.7cb470c1b390821d700f.jpg",
-    "static/media/97069290.jpg": "/deniswood/static/media/97069290.49692b648d30452593bf.jpg",
-    "static/media/62780161.jpg": "/deniswood/static/media/62780161.8ef5fec2bfbf6c1bcb1b.jpg",
-    "static/media/12417125.jpg": "/deniswood/static/media/12417125.ee32df6f2a7b3e3e621b.jpg",
-    "static/media/71064608.jpg": "/deniswood/static/media/71064608.7f543c187653a2edf41e.jpg",
-    "static/media/14824930.jpg": "/deniswood/static/media/14824930.55113c74e0e4c178d812.jpg",
-    "static/media/52164297.jpg": "/deniswood/static/media/52164297.f4b23f614d45607a51a5.jpg",
-    "static/media/43491821.jpg": "/deniswood/static/media/43491821.ed60adf233f5e8f7f121.jpg",
-    "static/media/95915266.jpg": "/deniswood/static/media/95915266.0510ba3dfe96905ed55f.jpg",
+    "static/media/fonBaner.jpg": "/deniswood/static/media/fonBaner.a59410688b0663bee138.jpg",
+    "static/media/20200623_221238.jpg": "/deniswood/static/media/20200623_221238.aefcfd19e8f94c55253b.jpg",
+    "static/media/20200831_005744.jpg": "/deniswood/static/media/20200831_005744.5ed0d863918def2ff402.jpg",
+    "static/media/IMG_3712.jpeg": "/deniswood/static/media/IMG_3712.3308b721f1cd72f42b70.jpeg",
+    "static/media/_Custom_84___x_42___.jpg": "/deniswood/static/media/_Custom_84___x_42___.3ed91a79a85548f93f51.jpg",
+    "static/media/93939762.jpg": "/deniswood/static/media/93939762.13491f5013df0f7697ff.jpg",
+    "static/media/20200822_102149.jpg": "/deniswood/static/media/20200822_102149.8d2329bb30e89dd163b6.jpg",
     "static/media/fonIcon.png": "/deniswood/static/media/fonIcon.ad930029646c0ec293e8.png",
-    "static/media/banerHeader.png": "/deniswood/static/media/banerHeader.bc45097d9d683db4e8c0.png",
+    "static/media/Group.png": "/deniswood/static/media/Group.c2b8eaf6212a7cbc4194.png",
     "static/media/Layer_1.png": "/deniswood/static/media/Layer_1.bad28cb97b6826cd95c0.png",
     "static/media/whatsapp.svg": "/deniswood/static/media/whatsapp.121e9878926d6160cc4511e7abac5cf6.svg",
     "static/media/telephone.svg": "/deniswood/static/media/telephone.a02769c5d61342010e138edb92889974.svg",
+    "static/media/cancel.svg": "/deniswood/static/media/cancel.74b3599246fda8dba84c91b89e207c06.svg",
     "index.html": "/deniswood/index.html",
     "static/media/play.svg": "/deniswood/static/media/play.06360202d725a3dcdc1f4cc4cbc0034f.svg",
-    "main.71511fe4.css.map": "/deniswood/static/css/main.71511fe4.css.map",
-    "main.83293653.js.map": "/deniswood/static/js/main.83293653.js.map",
+    "main.d2c9e09c.css.map": "/deniswood/static/css/main.d2c9e09c.css.map",
+    "main.09791607.js.map": "/deniswood/static/js/main.09791607.js.map",
     "787.de2061fa.chunk.js.map": "/deniswood/static/js/787.de2061fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.71511fe4.css",
-    "static/js/main.83293653.js"
+    "static/css/main.d2c9e09c.css",
+    "static/js/main.09791607.js"
   ]
 }
