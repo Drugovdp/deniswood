@@ -95,7 +95,6 @@
 
         &Item {
             width: 31%;
-            height: 683px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -103,7 +102,6 @@
 
             & .foto {
                 width: 95%;
-                height: 465px;
                 padding: 4px;
                 & img {
                     width: 100%;
@@ -129,9 +127,9 @@
             }
             & .prise {
                 color: $color-text-white;
-                &::after {
-                    content: " \20BD";
-                }
+                // &::after {
+                //     content: " \20BD";
+                // }
             }
             & .size,
             & .thickness {

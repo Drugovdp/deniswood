@@ -6,6 +6,7 @@ import { Order } from './Component/Order/Order';
 import { Answers } from './Component/Answers/Answers';
 import { Footer } from './Component/Footer/Footer';
 import { SectionForm } from './Component/SectionForm/SectionForm';
+import { MobileMenu } from './Component/MobileMenu/MobileMenu';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Order />
       <Answers />
       <Footer />
+      <MobileMenu />
     </div>
   );
 }

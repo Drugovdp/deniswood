@@ -1,13 +1,13 @@
 import { v1 } from "uuid";
 
-import charisma1 from "../images/84362446.jpg";
-import charisma2 from "../images/14824930.jpg";
-import platon1 from "../images/43491821.jpg";
-import platon2 from "../images/52164297.jpg";
-import standart1 from "../images/71064608.jpg";
-import standart2 from "../images/95915266.jpg";
-import grand1 from "../images/13047235.jpg";
-import grand2 from "../images/39965545.jpg";
+import charisma1 from "../images/93939762.jpg";
+import charisma2 from "../images/20200623_221238.jpg";
+import platon1 from "../images/_Custom_84___x_42___.jpg";
+import platon2 from "../images/IMG_3712.jpeg";
+import standart1 from "../images/20200831_005744.jpg";
+import standart2 from "../images/20200822_102149.jpg";
+import grand1 from "../images/20200320_134714.jpg";
+import grand2 from "../images/20200623_221305.jpg";
 import round1 from "../images/62780161.jpg";
 import round2 from "../images/97069290.jpg";
 import fashen1 from "../images/12417125.jpg";
@@ -19,7 +19,7 @@ export type TypeCatalog = {
   id: string;
   name: string;
   imgFoto: Array<string>;
-  prise: number;
+  prise: string;
   size: string;
   thickness: string;
   use: TypeUseTable;
@@ -29,8 +29,8 @@ export const catalog: TypeCatalog[] = [
   {
     id: v1(),
     name: "Харизма",
-    imgFoto: [charisma1, charisma2],
-    prise: 300000,
+    imgFoto: [charisma1],
+    prise: '',
     size: "2200x1000mm",
     thickness: "50mm",
     use: "dinner",
@@ -38,8 +38,8 @@ export const catalog: TypeCatalog[] = [
   {
     id: v1(),
     name: "Платон",
-    imgFoto: [platon1, platon2],
-    prise: 195000,
+    imgFoto: [charisma2],
+    prise: '',
     size: "2200x900mm",
     thickness: "50mm",
     use: "other",
@@ -47,8 +47,8 @@ export const catalog: TypeCatalog[] = [
   {
     id: v1(),
     name: "Стандарт",
-    imgFoto: [standart1, standart2],
-    prise: 100000,
+    imgFoto: [platon1],
+    prise: '',
     size: "1300x800mm",
     thickness: "50mm",
     use: "magazine",
@@ -56,8 +56,8 @@ export const catalog: TypeCatalog[] = [
   {
     id: v1(),
     name: "Гранд",
-    imgFoto: [grand1, grand2],
-    prise: 395000,
+    imgFoto: [platon2],
+    prise: '',
     size: "2900х1200mm",
     thickness: "50mm",
     use: "workers",
@@ -65,8 +65,8 @@ export const catalog: TypeCatalog[] = [
   {
     id: v1(),
     name: "Кругляш",
-    imgFoto: [round1, round2],
-    prise: 248000,
+    imgFoto: [standart1],
+    prise: '',
     size: "2000x2000mm",
     thickness: "50mm",
     use: "workers",
@@ -74,8 +74,8 @@ export const catalog: TypeCatalog[] = [
   {
     id: v1(),
     name: "Фэшен",
-    imgFoto: [fashen1, fashen2],
-    prise: 310000,
+    imgFoto: [standart2],
+    prise: '',
     size: "2000x1000mm",
     thickness: "50mm",
     use: "dinner",
@@ -129,4 +129,38 @@ export const accordionData: TypeAccordionData[] = [
     title: "Есть ли гарантия?",
     content: `В своей работе мы используем материалы премиального качества и проверенные технологии изготовления. Благодаря этому, мы уверены в качестве своих изделий и предлагаем гарантию 2 года по договору`,
   },
+];
+
+type TypeMobileMenu = {
+  id: string
+  icon: string
+  itemMenu: string
+}
+
+export const mobilemenu: TypeMobileMenu[] = [
+  {
+    id: v1(),
+    icon: "M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z",
+    itemMenu: 'Главная'
+  },
+  {
+    id: v1(),
+    icon: "M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z",
+    itemMenu: 'Обучения'
+  },
+  {
+    id: v1(),
+    icon: "M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z",
+    itemMenu: 'Записаться'
+  },
+  {
+    id: v1(),
+    icon: "M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm.256 7a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Zm3.63-4.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z",
+    itemMenu: 'Тренеры'
+  },
+  {
+    id: v1(),
+    icon: "M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z",
+    itemMenu: 'Контакты'
+  }
 ];

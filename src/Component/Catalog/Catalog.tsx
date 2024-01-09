@@ -44,12 +44,15 @@ export const Catalog = () => {
             spaceBetween={50}
             navigation
           >
-            <SwiperSlide><img src={el.imgFoto[0]} alt="" /></SwiperSlide>
-            <SwiperSlide><img src={el.imgFoto[1]} alt="" /></SwiperSlide>
+            {el.imgFoto.map(f => {
+              return (
+                <SwiperSlide><img src={f} alt="" /></SwiperSlide>
+              )
+            })}
           </Swiper>
         </div>
         <div className="name">{el.name}</div>
-        <div className="prise">{el.prise}</div>
+        {el.prise && <div className="prise">{el.prise}</div>}
         <div className="size">{el.size}</div>
         <div className="thickness">{el.thickness}</div>
         <Button className='btnCard' callBack={() => { }}>Заказать</Button>
@@ -78,7 +81,7 @@ export const Catalog = () => {
         if (parentBlock.getBoundingClientRect().top <= 0) {
           parentBlock.style.position = 'sticky'
           parentBlock.style.top = '0'
-          parentBlock.style.backgroundColor = '#090e10'
+          parentBlock.style.backgroundColor = '#142024'
           parentBlock.style.padding = '10px 0 10px 0'
           parentBlock.style.zIndex = '5'
         } else {
@@ -98,7 +101,7 @@ export const Catalog = () => {
   }, []);
 
   return (
-    <section>
+    <section id='catalog'>
       <div className='catalogWrapper'>
         <div className='catalogWrapperHeader' ref={parentBlockRef}>
           <div className="catalogTitle">

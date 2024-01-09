@@ -7,6 +7,7 @@ import './HeaderMain.scss'
 import baner from '../../../images/banerHeader.png'
 import decor from '../../../images/fonIcon.png'
 import play from '../../../images/play.svg'
+import fonBaneer from '../../../images/fonBaner.jpg'
 
 type TypePropsHeaderMain = {
   cor: Array<number>
@@ -46,7 +47,7 @@ export const HeaderMain: React.FC<TypePropsHeaderMain> = ({ cor, mouseOut }) => 
             </div>
             <div className='itemBtnVideoHeader'>
               <p>Посмотреть видео</p>
-              <span>WOODS</span>
+              <span>Wood Art</span>
             </div>
           </div>
         </div>
@@ -60,17 +61,17 @@ export const HeaderMain: React.FC<TypePropsHeaderMain> = ({ cor, mouseOut }) => 
           <div className="itemDiscription">
             <div className='line'></div>
             <div className="text">
-              Мастера нашей команды всегда творят в процессе изготовления
+              Мастера нашей команды всегда работают над созданием эксклюзивных изделий
             </div>
           </div>
         </div>
       </div>
-      <div ref={ref} className='baner'>
+      {/* <div ref={ref} className='baner'>
         <img src={baner} alt="" />
         <div className='decor'>
           <img src={decor} alt="" />
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

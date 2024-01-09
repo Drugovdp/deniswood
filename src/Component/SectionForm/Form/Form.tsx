@@ -6,12 +6,18 @@ import { Button } from '../../Button/Button'
 
 import './Form.scss'
 
+import animeLoadProgress from '../../../images/anime.gif'
+
 type TypeForm = {
     api: string
+    email: boolean
+    canselBlock: boolean
+    setCanselBlock: (canselBlock: boolean) => void
 }
 
-export const Form: React.FC<TypeForm> = ({api}) => {
+export const Form: React.FC<TypeForm> = ({ api, email, canselBlock, setCanselBlock }) => {
 
+    const [loadProgress, setLoadProgress] = useState(false)
     const [valueName, setValueName] = useState('')
     const [valueEmail, setValueEmail] = useState('')
     const [valueTel, setValueTel] = useState('')
@@ -43,6 +49,15 @@ export const Form: React.FC<TypeForm> = ({api}) => {
         }
     }
 
+    const loadProgresBlock = () => {
+        setLoadProgress(!loadProgress)
+    }
+
+    const succes = () => {
+        setLoadProgress(loadProgress)
+        setCanselBlock(!canselBlock)
+    }
+
     const onClickHandler = () => {
 
         let countError = 0
@@ -54,15 +69,12 @@ export const Form: React.FC<TypeForm> = ({api}) => {
             if (span) span.textContent = 'Поле пустое'; countError++
         }
 
-        if (!valueEmail) {
-            const span = document.querySelectorAll('.inputFeedBack')[1].nextSibling
-            if (span) span.textContent = 'Поле пустое'; countError++
-        }
-
-        const re = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i
-        if (valueEmail && !re.test(valueEmail)) {
-            const span = document.querySelectorAll('.inputFeedBack')[1].nextSibling
-            if (span) span.textContent = 'Некоректный адрес'; countError++
+        if (valueEmail) {
+            const re = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i
+            if (!re.test(valueEmail)) {
+                const span = document.querySelectorAll('.inputFeedBack')[1].nextSibling
+                if (span) span.textContent = 'Некоректный адрес'; countError++
+            }
         }
 
         if (valueEmail) {
@@ -77,21 +89,20 @@ export const Form: React.FC<TypeForm> = ({api}) => {
         }
 
         if (countError === 0) {
-
-            axios({
-                method: 'post',
-                url: `${api}`,
-                headers: { 'content-type': 'application/json' },
-                data: JSON.stringify(formData)
+            axios.post(api, JSON.stringify(formData), {
+                onUploadProgress: loadProgresBlock,
+                headers: { 'content-type': 'application/json' }
             })
-                .then(result => console.log(result.config.data))
-                .catch(error => console.log('error'))
+                .then(result => succes())
+                .catch(error => console.log(error))
 
             setFormData({
                 name: '',
                 email: '',
                 tel: ''
             })
+            console.log(formData);
+
             setValueName('')
             setValueEmail('')
             setValueTel('')
@@ -100,8 +111,11 @@ export const Form: React.FC<TypeForm> = ({api}) => {
 
     return (
         <div className="form">
+            {loadProgress && <div className="loadProgress">
+                <img src={animeLoadProgress} alt="animeLoadProgress" />
+            </div>}
             <label htmlFor="name">
-                <p>Ваше Имя</p>
+                <p>Ваше Имя*</p>
                 <Input
                     value={valueName}
                     classNames={'inputFeedBack'}
@@ -112,7 +126,7 @@ export const Form: React.FC<TypeForm> = ({api}) => {
                 <span></span>
             </label>
             <label htmlFor="tel">
-                <p>Укажите номер телефона</p>
+                <p>Укажите номер телефона*</p>
                 <Input
                     value={valueTel}
                     classNames={'inputFeedBack'}
@@ -122,16 +136,18 @@ export const Form: React.FC<TypeForm> = ({api}) => {
                 />
                 <span></span>
             </label>
-            <label htmlFor="email">
-                <p>Укажите почту</p>
-                <Input
-                    value={valueEmail}
-                    classNames={'inputFeedBack'}
-                    placeholder={'mail@mail.ru'}
-                    onChangeValueHandler={(value) => onChangeEmailHandler(value)}
-                />
-                <span></span>
-            </label>
+            {email &&
+                <label htmlFor="email">
+                    <p>Укажите почту</p>
+                    <Input
+                        value={valueEmail}
+                        classNames={'inputFeedBack'}
+                        placeholder={'mail@mail.ru'}
+                        onChangeValueHandler={(value) => onChangeEmailHandler(value)}
+                    />
+                    <span></span>
+                </label>
+            }
             <Button className='btnForm' callBack={onClickHandler}>Отправить</Button>
         </div>
     )

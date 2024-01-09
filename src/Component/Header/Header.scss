@@ -1,51 +1,16 @@
 @import "../../styles/variables.scss";
 
 header {
-    height: 1070px;
+    height: 100vh;
     position: relative;
-    overflow: hidden;
-}
-
-@media screen and (max-width: 1024px) {
-    header {
-        height: 90vh;
-    }
-}
-
-@media screen and (max-width: 960px) {
-    header {
-        height: 850px;
-    }
+    background: linear-gradient(rgba(8, 8, 8, 0.5), #142024), url('../../images/fonBaner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 @media screen and (max-width: 800px) {
     header {
-        height: 1135px;
-        overflow: visible;
-    } 
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    header {
-        height: 850px;
-        overflow: visible;
-    } 
-}
-
-@media screen and (max-width: 768px) {
-    header {
-        height: 1270px;
-    } 
-}
-
-@media screen and (max-width: 480px) {
-    header {
-        height: 1270px;
-    } 
-}
-
-@media only screen and (min-width: 360px) and (max-width: 800px) and (orientation: landscape) {
-    header {
-        height: 1100px;
+        height: unset;
     } 
 }

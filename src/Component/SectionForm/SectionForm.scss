@@ -1,6 +1,7 @@
 @import "../../styles/variables.scss";
 
 .sectionForm {
+    position: relative;
     .sectionFormWrapper {
         @include max-width-block;
         margin: $mt60 auto 0 auto;
@@ -24,11 +25,23 @@
         color: $color-text-white;
         font-size: 12px;
         @include font400;
-        margin-top: $mt60 / 4;
+        // margin-top: $mt60 / 4;
         padding: 5px;
 
         & a {
             color: $color-text-blue;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .sectionForm {
+        .succesBlockWrapper {
+            .succesBlock {
+                width: clamp(320px, 66vw, 800px);
+                height: 300px;
+                background-color: $color-text-white;
+            }
         }
     }
 }

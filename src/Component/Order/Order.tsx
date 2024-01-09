@@ -25,7 +25,7 @@ export const Order = () => {
             <div className="itemNumber">1</div>
             <div className='itemTitle'>
               <div className='itemTitleImg'><img src={img1} alt="img2" /></div>
-              <h3></h3>
+              <h3>Этап консультирования</h3>
             </div>
             <ul className='itemLists'>
               <li>Консультируем</li>
@@ -63,7 +63,7 @@ export const Order = () => {
             <div className="itemNumber">4</div>
             <div className='itemTitle'>
               <div className='itemTitleImg'><img src={img4} alt="img4" /></div>
-              <h3>Оплачиваем аванс</h3>
+              <h3>Получаем аванс</h3>
             </div>
             <ul className='itemLists'>
               <li>Аванс 60%</li>
@@ -75,26 +75,36 @@ export const Order = () => {
               <div className='itemTitleImg'><img src={img5} alt="img5" /></div>
               <h3>Начинаем творить</h3>
             </div>
+            <ul className='itemLists'>
+              <li>Важный этап - процесс изготовления</li>
+            </ul>
           </div>
+
           <div className="item">
             <div className="itemNumber">6</div>
             <div className='itemTitle'>
               <div className='itemTitleImg'><img src={img6} alt="img6" /></div>
-              <h3>Держим Вас в курсе процесса, отправляем фото/видео контрольных точек</h3>
+              <h3>Делаем вам фотоотчёт процесса изготовления</h3>
             </div>
+            <ul className='itemLists'>
+              <li>Работа по изготовлению изделия в столярной мастерской</li>
+            </ul>
           </div>
           <div className="item">
             <div className="itemNumber">7</div>
             <div className='itemTitle'>
               <div className='itemTitleImg'><img src={img7} alt="img7" /></div>
-              <h3>Презентуем Вам по фото/видео или при личной встречи в мастерской готовое изделие</h3>
+              <h3>Презентация изделия в мастерской</h3>
             </div>
+            <ul className='itemLists'>
+              <li>Приглашаем вас на предварительную приёмку</li>
+            </ul>
           </div>
           <div className="item">
             <div className="itemNumber">8</div>
             <div className='itemTitle'>
               <div className='itemTitleImg'><img src={img8} alt="img8" /></div>
-              <h3>Оплачиваем остаток</h3>
+              <h3>Получаем остаток</h3>
             </div>
             <ul className='itemLists'>
               <li>Аванс 40%</li>
@@ -111,7 +121,7 @@ export const Order = () => {
               <li>Сдаем груз в ТК</li>
             </ul>
           </div>
-          <div className="item">
+          <div className="item result">
             <div className="itemNumber">10</div>
             <div className='itemTitle'>
               <div className='itemTitleImg'><img src={img10} alt="img10" /></div>
@@ -120,6 +130,6 @@ export const Order = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   )
 }

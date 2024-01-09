@@ -8,7 +8,7 @@ import { Accordion } from './Accordion/Accordion';
 export const Answers = () => {  
 
     return (
-        <section className='sectionAnswers'>
+        <section id='question' className='sectionAnswers'>
             <div className="sectionAnswersWrapper">
                 <div className="answersTitle">
                     <h1><span>Ответы</span> на вопросы</h1>
@@ -17,7 +17,7 @@ export const Answers = () => {
                     {
                         accordionData.map(el => {
                             return (
-                                <Accordion id={el.id} title={el.title} content={el.content}/>
+                                <Accordion key={el.id} id={el.id} title={el.title} content={el.content}/>
                             )
                         })
                     }

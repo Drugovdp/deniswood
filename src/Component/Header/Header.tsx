@@ -4,6 +4,8 @@ import { HeaderNav } from './HeaderNav/HeaderNav'
 
 import './Header.scss'
 
+import fonBaneer from '../../images/fonBaner.jpg'
+
 export const Header = () => {
 
   const [cor, setCor] = useState([0, 0])
@@ -29,11 +31,8 @@ export const Header = () => {
   }
 
   return (
-    <header
-      onMouseMove={window.innerWidth > 800 ? mouseMoveHandler : cancelMouseEvent}
-      onMouseOut={window.innerWidth > 800 ? mouseOutHandler : cancelMouseEvent}
-      onMouseOver={window.innerWidth > 800 ? mouseOverHandler : cancelMouseEvent}
-    >
+    <header>
+      {/* <div className='fonBaner'><img src={fonBaneer} alt="fonBaneer" /></div> */}
       <HeaderNav />
       <HeaderMain cor={cor} mouseOut={mouseOut} />
     </header>

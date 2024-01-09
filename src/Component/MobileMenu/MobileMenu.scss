@@ -1,0 +1,52 @@
+@import "../../styles/variables.scss";
+
+.mobileMenu {
+    display: none;
+    position: fixed;
+    background: #142024;
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    z-index: 5;
+}
+
+@media screen and (max-width: 800px) {
+    .mobileMenu {
+        display: block;
+
+        &Box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(2px, 1.3vw, 10px);
+            margin-bottom: 15px;
+
+            &Item {
+                text-align: center;
+                cursor: pointer;
+
+                &Text {
+                    display: block;
+                    font-size: 12px;
+                    @include font500;
+                }
+                & svg {
+                    fill: #ffffff;
+                    stroke: #ffffff;
+                }
+                & a {
+                    color: #ffffff;
+                }
+                & svg:is(.active) {
+                    fill: #1f9fba;
+                    stroke: #1f9fba;
+                }
+                & a:is(.active) {
+                    color: #1f9fba;
+                }
+            }
+        }
+    }
+}

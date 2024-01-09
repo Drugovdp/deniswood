@@ -1,21 +1,32 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 
 import './SectionForm.scss'
 
 import { Form } from './Form/Form'
+import { API_PATH } from '../../Constant/constant'
+
+import cansel from '../../images/cancel.svg'
+import { SuccesForm } from '../SuccesForm/SuccesForm'
 
 export const SectionForm = () => {
 
-    const API_PATH = 'http://testemail/index.php'
+    const [canselBlock, setCanselBlock] = useState(false)
+
+    const onClickCancel = () => {
+        setCanselBlock(!canselBlock)
+    }
 
     return (
-        <section className='sectionForm'>
+        <section id='consultation' className='sectionForm'>
+            {canselBlock &&
+                <SuccesForm callback={onClickCancel}/>
+            }
             <div className="sectionFormWrapper">
                 <div className="formTitle">
                     <h1>ПОЛУЧИ <span>ПЕРСОНАЛЬНУЮ</span> КОНСУЛЬТАЦИЮ</h1>
                 </div>
-                <Form api={API_PATH} />
+                <Form api={API_PATH} canselBlock={canselBlock} setCanselBlock={setCanselBlock} email={true} />
+                <div className='formText'>* - поле обязательное</div>
                 <div className='formText'>Нажимая на кнопку, Вы принимаете <a href='#'>Положение</a> и <a href='#'>Согласие</a> на обработку персональных данных</div>
             </div>
         </section>

@@ -24,7 +24,7 @@ export const Accordion: React.FC<TypeAccordionData> = ({ id, title, content }) =
     }
 
     return (
-        <div key={id} className="accordionItem">
+        <div className="accordionItem">
             <div className="accordionItemTitle" onClick={() => onClickHandler(id)}>
                 <div>{title}</div>
                 <div ref={ref}>+</div>

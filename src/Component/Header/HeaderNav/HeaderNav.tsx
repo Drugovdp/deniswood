@@ -19,16 +19,16 @@ export const HeaderNav = () => {
           </div>
         </div>
         <ul className="navWrapperNav">
-          <li><a href="#">Столы</a></li>
-          <li><a href="#">Консультация</a></li>
-          <li><a href="#">Вопросы</a></li>
+          <li><a href="#catalog">Столы</a></li>
+          <li><a href="#consultation">Консультация</a></li>
+          <li><a href="#question">Вопросы</a></li>
           <li><ButtonContacts /></li>
         </ul>
-        <div className="mobileMenu">
+        {/* <div className="mobileMenu">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </div> */}
       </div>
     </nav>
   )

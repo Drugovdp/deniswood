@@ -2,12 +2,16 @@
 
 .headerMain {
     @include max-width-block;
-    margin-top: clamp(100px, 16vw, 200px);
+    margin-top: clamp(100px, 16vw, 170px);
+    position: relative;
 
     &Content {
         display: flex;
         flex-direction: column;
+        align-items: center;
         row-gap: 60px;
+        position: relative;
+        z-index: 2;
 
         & .title {
             font-size: $font-46-62;
