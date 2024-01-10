@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/deniswood/static/css/main.d2c9e09c.css",
-    "main.js": "/deniswood/static/js/main.09791607.js",
+    "main.css": "/deniswood/static/css/main.1ec2b98a.css",
+    "main.js": "/deniswood/static/js/main.546002b6.js",
     "static/js/787.de2061fa.chunk.js": "/deniswood/static/js/787.de2061fa.chunk.js",
     "static/media/fonBaner.jpg": "/deniswood/static/media/fonBaner.a59410688b0663bee138.jpg",
     "static/media/20200623_221238.jpg": "/deniswood/static/media/20200623_221238.aefcfd19e8f94c55253b.jpg",
@@ -13,17 +13,21 @@
     "static/media/fonIcon.png": "/deniswood/static/media/fonIcon.ad930029646c0ec293e8.png",
     "static/media/Group.png": "/deniswood/static/media/Group.c2b8eaf6212a7cbc4194.png",
     "static/media/Layer_1.png": "/deniswood/static/media/Layer_1.bad28cb97b6826cd95c0.png",
+    "static/media/logoWhite.jpg": "/deniswood/static/media/logoWhite.71c9e36f667af263ca30.jpg",
+    "static/media/whatsappWhite.svg": "/deniswood/static/media/whatsappWhite.fce7f0b622a7ada5085fe352a1c690c9.svg",
     "static/media/whatsapp.svg": "/deniswood/static/media/whatsapp.121e9878926d6160cc4511e7abac5cf6.svg",
     "static/media/telephone.svg": "/deniswood/static/media/telephone.a02769c5d61342010e138edb92889974.svg",
+    "static/media/cancelWhite.svg": "/deniswood/static/media/cancelWhite.268697690cf95a351786e3ae14a9d471.svg",
     "static/media/cancel.svg": "/deniswood/static/media/cancel.74b3599246fda8dba84c91b89e207c06.svg",
+    "static/media/telephoneWhite.svg": "/deniswood/static/media/telephoneWhite.44a8fe56c0ccf775a2856d15033e5005.svg",
     "index.html": "/deniswood/index.html",
     "static/media/play.svg": "/deniswood/static/media/play.06360202d725a3dcdc1f4cc4cbc0034f.svg",
-    "main.d2c9e09c.css.map": "/deniswood/static/css/main.d2c9e09c.css.map",
-    "main.09791607.js.map": "/deniswood/static/js/main.09791607.js.map",
+    "main.1ec2b98a.css.map": "/deniswood/static/css/main.1ec2b98a.css.map",
+    "main.546002b6.js.map": "/deniswood/static/js/main.546002b6.js.map",
     "787.de2061fa.chunk.js.map": "/deniswood/static/js/787.de2061fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2c9e09c.css",
-    "static/js/main.09791607.js"
+    "static/css/main.1ec2b98a.css",
+    "static/js/main.546002b6.js"
   ]
 }
