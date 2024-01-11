@@ -10,6 +10,9 @@ import 'swiper/scss/pagination';
 
 import { TypeCatalog, TypeUseTable, catalog } from '../../state/state'
 import { Button } from '../Button/Button'
+import { PopUpForm } from '../PopUpForm/PopUpForm';
+import { SuccesForm } from '../SuccesForm/SuccesForm';
+import { API_PATH } from '../../Constant/constant';
 
 export const Catalog = () => {
 
@@ -35,6 +38,18 @@ export const Catalog = () => {
     setFilterCatalog(filterValue)
   }
 
+  const [changeBlock, setChangeBlock] = useState(false)
+  const [openForm, setOpenForm] = useState(false)
+
+  const onClickChange = () => {
+    setChangeBlock(!changeBlock)
+  }
+
+  const onClickOpenForm = () => {
+    setOpenForm(!openForm)
+    setChangeBlock(false)
+  }
+
   const cardsProdact = cards.map(el => {
     return (
       <div key={el.id} className="prodactItem">
@@ -55,7 +70,7 @@ export const Catalog = () => {
         {el.prise && <div className="prise">{el.prise}</div>}
         <div className="size">{el.size}</div>
         <div className="thickness">{el.thickness}</div>
-        <Button className='btnCard' callBack={() => { }}>Заказать</Button>
+        <Button className='btnCard' callBack={onClickOpenForm}>Хочу такой</Button>
       </div>
     )
   })
@@ -102,6 +117,16 @@ export const Catalog = () => {
 
   return (
     <section id='catalog'>
+      {openForm
+        ?
+        !changeBlock
+          ?
+          <PopUpForm api={API_PATH} changeBlock={changeBlock} onClickOpenForm={onClickOpenForm} onClickChange={onClickChange} />
+          :
+          <SuccesForm callback={onClickOpenForm} />
+        :
+        ''
+      }
       <div className='catalogWrapper'>
         <div className='catalogWrapperHeader' ref={parentBlockRef}>
           <div className="catalogTitle">

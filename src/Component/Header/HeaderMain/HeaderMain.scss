@@ -128,33 +128,13 @@
             }
         }
     }
-    & .baner {
-        position: absolute;
-        width: clamp(300px, 37vw, 520px);
-        top: 250px;
-        right: 0;
-
-        & img {
-            width: 100%;
-        }
-
-        & .decor {
-            position: absolute;
-            width: 90%;
-            top: 54%;
-            right: 27%;
-            opacity: 0.3;
-            z-index: 2;
-
-            & img {
-                width: 100%;
-            }
-        }
-    }
 }
 
 .btnTable,
 .btnCatalog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #ffffff;
     width: clamp(210px, 25vw, 300px);
     height: clamp(52px, 5vw, 60px);
@@ -163,6 +143,10 @@
     border-radius: 30px;
     @include font700;
     border: 3px solid $background-color;
+
+    & a {
+        color: #ffffff;
+    }
 }
 
 .btnTable {
@@ -193,17 +177,6 @@
                 }
             }
         }
-        & .baner {
-            position: absolute;
-            width: 400px;
-            top: unset;
-    
-            & .decor {
-                width: 400px;
-                right: 10%;
-                top: 10%;
-            }
-        }
     }
 }
 
@@ -212,16 +185,6 @@
         &Content {
             & .title {
                 font-size: $font-24-42;
-            }
-        }
-        & .baner {
-            position: absolute;
-            width: 400px;
-            top: unset;
-    
-            & .decor {
-                right: 10%;
-                top: 43%;
             }
         }
     }
@@ -256,14 +219,6 @@
                     width: 90%;
                     margin-top: $mt60 / 3;
                 }
-            }
-        }
-        .baner {
-            width: 88%;
-            margin-top: $mt60;
-
-            & .decor {
-                right: 22%;
             }
         }
     }

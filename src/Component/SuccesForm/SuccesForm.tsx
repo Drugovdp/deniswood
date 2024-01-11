@@ -4,12 +4,13 @@ import './SuccesForm.scss'
 
 import cansel from '../../images/cancel.svg'
 import gal from '../../images/gal.png'
+import { CloseButton } from '../CloseButton/CloseButton'
 
 type TypeSuccesForm = {
     callback: () => void
 }
 
-export const SuccesForm: React.FC<TypeSuccesForm> = ({callback}) => {
+export const SuccesForm: React.FC<TypeSuccesForm> = ({ callback }) => {
 
     const onClickHandler = () => {
         callback()
@@ -18,9 +19,7 @@ export const SuccesForm: React.FC<TypeSuccesForm> = ({callback}) => {
     return (
         <div className='succesBlockWrapper'>
             <div className="succesBlock">
-                <div className="close" onClick={onClickHandler}>
-                    <img src={cansel} alt="cansel" />
-                </div>
+                <CloseButton color={false} callBack={onClickHandler} />
                 <div className="textSucces">
                     <img src={gal} alt="gal" />
                     <h3>Ваша заявка отправлена</h3>

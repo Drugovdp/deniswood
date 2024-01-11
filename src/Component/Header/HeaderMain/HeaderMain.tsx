@@ -1,13 +1,14 @@
-import React, { useRef } from 'react'
-import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
-import { Button } from '../../Button/Button'
+import React, { useRef, useState } from 'react'
 
 import './HeaderMain.scss'
 
-import baner from '../../../images/banerHeader.png'
-import decor from '../../../images/fonIcon.png'
+import { Button } from '../../Button/Button'
+
 import play from '../../../images/play.svg'
-import fonBaneer from '../../../images/fonBaner.jpg'
+
+import { API_PATH } from '../../../Constant/constant'
+import { SuccesForm } from '../../SuccesForm/SuccesForm'
+import { PopUpForm } from '../../PopUpForm/PopUpForm'
 
 type TypePropsHeaderMain = {
   cor: Array<number>
@@ -28,8 +29,30 @@ export const HeaderMain: React.FC<TypePropsHeaderMain> = ({ cor, mouseOut }) => 
     }
   }
 
+  const [changeBlock, setChangeBlock] = useState(false)
+  const [openForm, setOpenForm] = useState(false)
+
+  const onClickChange = () => {
+    setChangeBlock(!changeBlock)
+  }
+
+  const onClickOpenForm = () => {
+    setOpenForm(!openForm)
+    setChangeBlock(false)
+  }
+
   return (
     <div className='headerMain'>
+      {openForm
+        ?
+        !changeBlock
+          ?
+          <PopUpForm api={API_PATH} changeBlock={changeBlock} onClickOpenForm={onClickOpenForm} onClickChange={onClickChange} />
+          :
+          <SuccesForm callback={onClickOpenForm} />
+        :
+        ''
+      }
       <div className='headerMainContent'>
         <div className='title'>
           <h1>АВТОРСКИЙ СТИЛЬ</h1>
@@ -37,8 +60,8 @@ export const HeaderMain: React.FC<TypePropsHeaderMain> = ({ cor, mouseOut }) => 
         </div>
         <div className="btnBlock">
           <div className='itemBtn'>
-            <Button className={'btnTable'} callBack={() => { }}>ХОЧУ СТОЛ</Button>
-            <Button className={'btnCatalog'} callBack={() => { }}>СМОТРЕТЬ КАТАЛОГ</Button>
+            <Button className={'btnTable'} callBack={onClickOpenForm}>ХОЧУ СТОЛ</Button>
+            <div className="btnCatalog"><a href="#catalog">СМОТРЕТЬ КАТАЛОГ</a></div>
           </div>
           <div className="itemBtnVideo">
             <div className="itemBtnVideoBtn">
@@ -66,12 +89,6 @@ export const HeaderMain: React.FC<TypePropsHeaderMain> = ({ cor, mouseOut }) => 
           </div>
         </div>
       </div>
-      {/* <div ref={ref} className='baner'>
-        <img src={baner} alt="" />
-        <div className='decor'>
-          <img src={decor} alt="" />
-        </div>
-      </div> */}
     </div>
   )
 }

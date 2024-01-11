@@ -101,7 +101,6 @@ export const Form: React.FC<TypeForm> = ({ api, email, canselBlock, setCanselBlo
                 email: '',
                 tel: ''
             })
-            console.log(formData);
 
             setValueName('')
             setValueEmail('')

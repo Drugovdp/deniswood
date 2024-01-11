@@ -20,16 +20,7 @@
         border: 3px solid $color-text-blue;
         border-radius: 10px;
         position: relative;
-
-        .close {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-        }
+        
         .textSucces {
             color: $color-text-grey;
             height: 100%;
