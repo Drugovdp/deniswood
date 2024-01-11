@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/deniswood/static/css/main.1ec2b98a.css",
-    "main.js": "/deniswood/static/js/main.546002b6.js",
+    "main.css": "/deniswood/static/css/main.224d524a.css",
+    "main.js": "/deniswood/static/js/main.fb56c8d6.js",
     "static/js/787.de2061fa.chunk.js": "/deniswood/static/js/787.de2061fa.chunk.js",
     "static/media/fonBaner.jpg": "/deniswood/static/media/fonBaner.a59410688b0663bee138.jpg",
     "static/media/20200623_221238.jpg": "/deniswood/static/media/20200623_221238.aefcfd19e8f94c55253b.jpg",
@@ -22,12 +22,12 @@
     "static/media/telephoneWhite.svg": "/deniswood/static/media/telephoneWhite.44a8fe56c0ccf775a2856d15033e5005.svg",
     "index.html": "/deniswood/index.html",
     "static/media/play.svg": "/deniswood/static/media/play.06360202d725a3dcdc1f4cc4cbc0034f.svg",
-    "main.1ec2b98a.css.map": "/deniswood/static/css/main.1ec2b98a.css.map",
-    "main.546002b6.js.map": "/deniswood/static/js/main.546002b6.js.map",
+    "main.224d524a.css.map": "/deniswood/static/css/main.224d524a.css.map",
+    "main.fb56c8d6.js.map": "/deniswood/static/js/main.fb56c8d6.js.map",
     "787.de2061fa.chunk.js.map": "/deniswood/static/js/787.de2061fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ec2b98a.css",
-    "static/js/main.546002b6.js"
+    "static/css/main.224d524a.css",
+    "static/js/main.fb56c8d6.js"
   ]
 }
