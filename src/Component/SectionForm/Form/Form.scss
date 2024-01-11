@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: $mt60 / 4 auto 0 auto;
+    margin: 0 auto;
 
     .loadProgress {
         position: absolute;
@@ -31,7 +31,7 @@
         color: $color-text-white;
         font-size: $font-16-20;
         @include font400;
-        margin-top: $mt60 / 2;
+        margin-top: $mt60 / 3;
         position: relative;
 
         & span {

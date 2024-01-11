@@ -15,15 +15,15 @@
 
     &Wrapper {
         width: clamp(350px, 67vw, 800px);
-        height: 650px;
+        height: 570px;
         background-color: $background;
 
         & h3 {
             color: $color-text-white;
-            font-size: $font-18-24;
+            font-size: $font-16-20;
             @include font600;
             text-align: center;
-            padding: 10px;
+            padding: 2px;
             line-height: 1.5;
         }
 

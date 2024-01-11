@@ -18,6 +18,22 @@ export const HeaderNav = () => {
 
   const [canselBlock, setCanselBlock] = useState(false)
 
+  useEffect(() => {
+    if (!canselBlock) {
+      if (ref.current) {
+        ref.current.style.display = `block`
+        ref.current.style.right = `-${screenWidth}px`
+        ref.current.style.transition = `unset`
+      }
+    } else {
+      if (ref.current) {
+        ref.current.style.display = `block`
+        ref.current.style.right = `0px`
+        ref.current.style.transition = `right 0.3s ease`
+      }
+    }
+  }, [canselBlock])
+
   const onClickCancel = () => {
     setCanselBlock(!canselBlock)
   }
@@ -26,17 +42,7 @@ export const HeaderNav = () => {
     setCanselBlock(!canselBlock)
   }
 
-  useEffect(() => {
-    if (ref.current) {
-      if (!canselBlock) {
-        ref.current.style.right = `-${screenWidth}px`
-        ref.current.style.transition = `unset`
-      } else {
-        ref.current.style.right = `0px`
-        ref.current.style.transition = `right 0.3s ease`
-      }
-    }
-  }, [canselBlock])
+  console.log(canselBlock)
 
   return (
     <nav className='nav'>
