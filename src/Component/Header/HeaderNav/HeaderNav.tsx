@@ -42,15 +42,13 @@ export const HeaderNav = () => {
     setCanselBlock(!canselBlock)
   }
 
-  console.log(canselBlock)
-
   return (
     <nav className='nav'>
       <div className="navWrapper">
         <div className="navWrapperLogo">
-          <img src={logo} alt="" />
+          <img src={logo} alt="logo" />
           <div className='decor'>
-            <img src={decor} alt="" />
+            <img src={decor} alt="decor" />
           </div>
         </div>
         <ul className="navWrapperNav">

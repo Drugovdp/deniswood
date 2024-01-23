@@ -19,6 +19,7 @@ export const CloseButton: React.FC<TypeCloseBlock> = ({color, callBack}) => {
     return (
         <div className="close" onClick={onClickHandler}>
             <img src={color ? canselWhite: canselBlue} alt="cansel" />
+            <p>Закрыть</p>
         </div>
     )
 }

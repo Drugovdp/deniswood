@@ -17,6 +17,7 @@
         width: clamp(350px, 67vw, 800px);
         height: 570px;
         background-color: $background;
+        position: relative;
 
         & h3 {
             color: $color-text-white;
@@ -37,6 +38,14 @@
             & a {
                 color: $color-text-blue;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .popUpForm {
+        &Wrapper {
+            height: 460px;
         }
     }
 }

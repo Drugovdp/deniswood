@@ -32,13 +32,10 @@ export const Footer = () => {
                         <a href="tel:+7 950 205-00-84">+7 950 205-00-84</a>
                         <a href="https://wa.me/79502050084?text=Здравствуйте! Меня интересует...">What'sApp</a>
                         <a href="https://t.me/+dhyYkLO29uw3Zjhi">Telegram</a>
-                        <div className="mailingAddress">г.Екатеринбург ул.Восточная 2</div>
+                        <div className="mailingAddress">г.Екатеринбург ул.Восточная 5б</div>
                     </div>
                     <div className="desktopContentForms">
-                        <h4>Получите персональную консультацию</h4>
-                        <Form api={API_PATH} canselBlock={canselBlock} setCanselBlock={setCanselBlock} email={false} />
-                        <div className='formText'>* - поле обязательное</div>
-                        <div className="formText">Нажимая на кнопку, Вы принимаете <a href="#">Положение</a> и <a href="#">Согласие</a> на обработку персональных данных</div>
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7c58daa199358e909790f3128ac013e20b9d13fe142797337830a9154977ca59&amp;source=constructor" width="100%" height="400"></iframe>
                     </div>
                 </div>
                 <div className="privacyPolicy">

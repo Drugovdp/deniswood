@@ -32,7 +32,6 @@ export const Header = () => {
 
   return (
     <header>
-      {/* <div className='fonBaner'><img src={fonBaneer} alt="fonBaneer" /></div> */}
       <HeaderNav />
       <HeaderMain cor={cor} mouseOut={mouseOut} />
     </header>

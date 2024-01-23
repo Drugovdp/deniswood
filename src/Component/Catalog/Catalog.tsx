@@ -19,6 +19,7 @@ export const Catalog = () => {
   const [cards, setCards] = useState<TypeCatalog[]>([])
 
   const [filterCatalog, setFilterCatalog] = useState('all')
+  const [nameCard, setNameCard] = useState('')
 
   useEffect(() => {
     if (filterCatalog === 'all') {
@@ -45,7 +46,13 @@ export const Catalog = () => {
     setChangeBlock(!changeBlock)
   }
 
-  const onClickOpenForm = () => {
+  const onClickCloseForm = () => {
+    setOpenForm(!openForm)
+    setChangeBlock(false)
+  }
+
+  const onClickBtnCard = (name: string) => {
+    setNameCard(name)
     setOpenForm(!openForm)
     setChangeBlock(false)
   }
@@ -59,9 +66,9 @@ export const Catalog = () => {
             spaceBetween={50}
             navigation
           >
-            {el.imgFoto.map(f => {
+            {el.imgFoto.map((f, i) => {
               return (
-                <SwiperSlide><img src={f} alt="" /></SwiperSlide>
+                <SwiperSlide key={i}><img src={f} alt="" /></SwiperSlide>
               )
             })}
           </Swiper>
@@ -69,8 +76,9 @@ export const Catalog = () => {
         <div className="name">{el.name}</div>
         {el.prise && <div className="prise">{el.prise}</div>}
         <div className="size">{el.size}</div>
-        <div className="thickness">{el.thickness}</div>
-        <Button className='btnCard' callBack={onClickOpenForm}>Хочу такой</Button>
+        <div className="thickness">Высота {el.height}</div>
+        {el.use === 'komod' ? <div className="thickness"></div> : <div className="thickness">Толщина {el.thickness}</div>}
+        <Button className='btnCard' callBack={() => onClickBtnCard(el.name)}>Хочу такой</Button>
       </div>
     )
   })
@@ -121,9 +129,16 @@ export const Catalog = () => {
         ?
         !changeBlock
           ?
-          <PopUpForm api={API_PATH} changeBlock={changeBlock} onClickOpenForm={onClickOpenForm} onClickChange={onClickChange} />
+          <PopUpForm
+            api={API_PATH}
+            nameCard={nameCard}
+            valueNameForm={true}
+            changeBlock={changeBlock}
+            onClickCloseForm={onClickCloseForm}
+            onClickChange={onClickChange}
+          />
           :
-          <SuccesForm callback={onClickOpenForm} />
+          <SuccesForm callback={onClickCloseForm} />
         :
         ''
       }
@@ -138,6 +153,8 @@ export const Catalog = () => {
               <option value={'dinner'}>ОБЕДЕННЫЕ</option>
               <option value={'magazine'}>ЖУРНАЛЬНЫЕ</option>
               <option value={'workers'}>РАБОЧИЕ</option>
+              <option value={'workers'}>РАБОЧИЕ</option>
+              <option value={'komod'}>КОМОД</option>
               <option value={'other'}>ДРУГОЕ</option>
             </select>
           </div>
@@ -157,6 +174,10 @@ export const Catalog = () => {
             <div className="btnFilter">
               <input id='workers' name='filter' type="radio" value={'workers'} onChange={onChangeHandler} checked={filterCatalog === 'workers' ? true : false} />
               <label htmlFor="workers">РАБОЧИЕ</label>
+            </div>
+            <div className="btnFilter">
+              <input id='komod' name='filter' type="radio" value={'komod'} onChange={onChangeHandler} checked={filterCatalog === 'other' ? true : false} />
+              <label htmlFor="komod">КОМОД</label>
             </div>
             <div className="btnFilter">
               <input id='other' name='filter' type="radio" value={'other'} onChange={onChangeHandler} checked={filterCatalog === 'other' ? true : false} />

@@ -6,7 +6,7 @@ import { Order } from './Component/Order/Order';
 import { Answers } from './Component/Answers/Answers';
 import { Footer } from './Component/Footer/Footer';
 import { SectionForm } from './Component/SectionForm/SectionForm';
-import { MobileMenu } from './Component/MobileMenu/MobileMenu';
+import { Video } from './Component/Video/Video';
 
 function App() {
   return (

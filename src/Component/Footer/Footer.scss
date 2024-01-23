@@ -83,7 +83,7 @@
                 }
             }
             &Forms {
-                max-width: 450px;
+                max-width: 520px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
@@ -160,6 +160,13 @@
     .footer {
         .patterns {
             display: none;
+        }
+        &Wrapper {
+            .footerTitle {
+                & h1 {
+                    font-size: 32px;
+                }
+            }
         }
     }
 }

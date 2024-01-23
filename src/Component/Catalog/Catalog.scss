@@ -98,19 +98,32 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: space-between;
             box-shadow: 0px 2px 8px 5px rgba(255, 255, 255, 0.25) inset;
 
             & .foto {
                 width: 95%;
+                height: 300px;
                 padding: 4px;
-                & img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .swiper {
                     width: 100%;
-                }
-                .swiper-button-prev:after,
-                .swiper-button-next:after {
-                    font-size: 28px;
-                    font-weight: 600;
-                    color: $color-text-blue;
+                    height: 100%;
+
+                    & img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                    .swiper-button-prev:after,
+                    .swiper-button-next:after {
+                        font-size: 28px;
+                        font-weight: 600;
+                        color: $color-text-blue;
+                    }
                 }
             }
             & .name,
@@ -127,14 +140,13 @@
             }
             & .prise {
                 color: $color-text-white;
-                // &::after {
-                //     content: " \20BD";
-                // }
             }
             & .size,
             & .thickness {
                 color: $color-text-grey;
                 font-size: $font-16-20;
+                height: $font-16-20;
+                margin-top: 10px;
                 @include font400;
             }
         }
@@ -228,7 +240,7 @@
             align-items: center;
             justify-content: space-around;
             margin: $mt60 / 4 0 $mt60 / 4 0;
-            
+
             & .catalogTitle {
                 font-size: 18px;
             }

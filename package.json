@@ -2,7 +2,7 @@
   "name": "deniswoods",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Drugovdp.github.io/deniswood/",
+  "homepage": "https://ts-nsk.ru/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -17,6 +17,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-parallax-mouse": "^2.1.0",
+    "react-player": "^2.14.1",
     "react-scripts": "5.0.1",
     "sass": "^1.69.5",
     "swiper": "^11.0.5",

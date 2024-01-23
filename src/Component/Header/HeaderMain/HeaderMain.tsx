@@ -31,14 +31,21 @@ export const HeaderMain: React.FC<TypePropsHeaderMain> = ({ cor, mouseOut }) => 
 
   const [changeBlock, setChangeBlock] = useState(false)
   const [openForm, setOpenForm] = useState(false)
+  const [videoBlock, setVideoBlock] = useState(false)
+  const [valueNameForm, setValueNameForm] = useState(true)
 
   const onClickChange = () => {
     setChangeBlock(!changeBlock)
   }
 
-  const onClickOpenForm = () => {
+  const onClickOpenForm = (value: boolean) => {
+    setValueNameForm(value)
     setOpenForm(!openForm)
-    setChangeBlock(false)
+  }
+
+  const onClickCloseForm = () => {
+    setValueNameForm(true)
+    setOpenForm(!openForm)
   }
 
   return (
@@ -47,9 +54,15 @@ export const HeaderMain: React.FC<TypePropsHeaderMain> = ({ cor, mouseOut }) => 
         ?
         !changeBlock
           ?
-          <PopUpForm api={API_PATH} changeBlock={changeBlock} onClickOpenForm={onClickOpenForm} onClickChange={onClickChange} />
+          <PopUpForm
+            api={API_PATH}
+            changeBlock={changeBlock}
+            valueNameForm={valueNameForm}
+            onClickCloseForm={onClickCloseForm}
+            onClickChange={onClickChange}
+          />
           :
-          <SuccesForm callback={onClickOpenForm} />
+          <SuccesForm callback={onClickCloseForm} />
         :
         ''
       }
@@ -60,12 +73,12 @@ export const HeaderMain: React.FC<TypePropsHeaderMain> = ({ cor, mouseOut }) => 
         </div>
         <div className="btnBlock">
           <div className='itemBtn'>
-            <Button className={'btnTable'} callBack={onClickOpenForm}>ХОЧУ СТОЛ</Button>
+            <Button className={'btnTable'} callBack={() => onClickOpenForm(true)}>ХОЧУ СТОЛ</Button>
             <div className="btnCatalog"><a href="#catalog">СМОТРЕТЬ КАТАЛОГ</a></div>
           </div>
-          <div className="itemBtnVideo">
+          <div className="itemBtnVideo" onClick={() => onClickOpenForm(false)}>
             <div className="itemBtnVideoBtn">
-              <img src={play} alt="" />
+              <img src={play} alt="play" />
               <div className='animBc'></div>
             </div>
             <div className='itemBtnVideoHeader'>

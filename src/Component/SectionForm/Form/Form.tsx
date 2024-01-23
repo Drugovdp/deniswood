@@ -10,12 +10,13 @@ import animeLoadProgress from '../../../images/anime.gif'
 
 type TypeForm = {
     api: string
+    nameCard?: string
     email: boolean
     canselBlock: boolean
     setCanselBlock: (canselBlock: boolean) => void
 }
 
-export const Form: React.FC<TypeForm> = ({ api, email, canselBlock, setCanselBlock }) => {
+export const Form: React.FC<TypeForm> = ({ api, nameCard, email, canselBlock, setCanselBlock }) => {
 
     const [loadProgress, setLoadProgress] = useState(false)
     const [valueName, setValueName] = useState('')
@@ -24,7 +25,8 @@ export const Form: React.FC<TypeForm> = ({ api, email, canselBlock, setCanselBlo
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        tel: ''
+        tel: '',
+        nameCardInfo: ''
     })
 
     const onFocusNameHandler = (e: React.FocusEvent<HTMLElement>) => {
@@ -88,6 +90,10 @@ export const Form: React.FC<TypeForm> = ({ api, email, canselBlock, setCanselBlo
             formData.tel = valueTel
         }
 
+        if (nameCard) {
+            formData.nameCardInfo = nameCard
+        }
+
         if (countError === 0) {
             axios.post(api, JSON.stringify(formData), {
                 onUploadProgress: loadProgresBlock,
@@ -99,7 +105,8 @@ export const Form: React.FC<TypeForm> = ({ api, email, canselBlock, setCanselBlo
             setFormData({
                 name: '',
                 email: '',
-                tel: ''
+                tel: '',
+                nameCardInfo: ''
             })
 
             setValueName('')

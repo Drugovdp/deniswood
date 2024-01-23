@@ -1,0 +1,45 @@
+@import "../../styles/variables.scss";
+
+.videoSlider {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    & .videoTitle {
+        width: 90%;
+        text-align: center;
+
+        & h1 {
+            color: white;
+            font-size: $font-18-24;
+            @include font700;
+            text-transform: uppercase;
+
+            & span {
+                color: #1f9fba;
+            }
+        }
+
+        & p {
+            color: white;
+            font-size: $font-12-16;
+            @include font400;
+            padding: 15px;
+            line-height: 1.5;
+        }
+    }
+
+    & .logoFutterSlider {
+        width: 100%;
+        height: 25px;
+        padding: 2px;
+        
+        & img {
+            display: block;
+            height: 100%;
+            margin: 0 auto;
+        }
+    }
+}
